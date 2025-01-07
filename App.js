@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import {View, Text, StyleSheet} from "react-native";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const App = () => {
+    return (
+        <View style={styles.screen}>
+            <View style={styles.square}>
+                <Text style={styles.text}>Hello, world</Text>
+            </View>
+        </View>
+    );
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    screen: {
+        flex: 1, // Chiếm toàn bộ không gian màn hình
+        justifyContent: "center", // Căn giữa theo chiều dọc
+        alignItems: "center", // Căn giữa theo chiều ngang
+    },
+    square: {
+        width: 100, // Chiều rộng của hình vuông
+        height: 100, // Chiều cao của hình vuông
+        backgroundColor: "black", // Màu nền
+        justifyContent: "center", // Căn giữa nội dung theo chiều dọc
+        alignItems: "center", // Căn giữa nội dung theo chiều ngang
+    },
+    text: {
+        color: "white", // Màu chữ
+        fontSize: 16, // Kích thước chữ
+    },
 });
+
+export default App;
